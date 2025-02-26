@@ -1,0 +1,11 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow: visible;
+}
+.pages {
+  padding-top: 80px;
+  /* Match your navbar height */
+}

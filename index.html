@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Abdur Razzaq Portfolio</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<style>
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    overflow: visible;
+  }
+  
+  .pages {
+    padding-top: 80px;
+    /* Match your navbar height */
+  }
+</style>
+
+<body class="font-serif">
+  
+  <nav class="bg-gray-800 text-white fixed top-0 left-0 w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold"><a href="#hero">dev<span class="text-green-500 text-3xl font-extrabold">AR</span>coder</a></div>
+        
+        <!-- Navbar Links -->
+        <div class="hidden md:flex space-x-8">
+          
+          <a href="#about" class="hover:text-gray-300">About</a>
+          <a href="#projects" class="hover:text-gray-300">Projects</a>
+          <a href="#services" class="hover:text-gray-300">Services</a>
+          <a href="#testimonials" class="hover:text-gray-300">Testimonials</a>
+          <a href="#contact" class="hover:text-gray-300">Contact</a>
+        </div>
+        
+        
+        <!-- Mobile Hamburger Menu -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="focus:outline-none">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="cartmodal" class="modal bg-white border border-gray-100 shadow-lg rounded-b-lg w-full h-screen fixed top-0 left-0 transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+      <!-- Sidebar Header -->
+      <div class="sidebar flex flex-col sm:flex-row justify-between items-center p-3 bg-gray-100 shadow-md">
+        <button class="text-black" onclick="toggleResume()">
+          <svg class="w-7 h-7" fill="none" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="flex flex-col text-center mt-3 sm:mt-0">
+          <h1 class="text-2xl font-bold text-gray-800">Abdur Razzaq</h1>
+          <h1 class="text-teal-500 text-lg">Frontend Developer</h1>
+        </div>
+        <button class="text-black font-bold hidden sm:block">More</button>
+      </div>
+      
+      <!-- Resume Content -->
+      <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 sm:p-8 mt-4">
+        <!-- Contact Section -->
+        <section class="mt-1">
+          <h2 class="text-lg font-bold text-gray-700 border-b-2 border-teal-500">Contact</h2>
+          <ul class="list-disc ml-8 mt-4 text-gray-600">
+            <li><strong>Phone:</strong> +92 307 0925248</li>
+            <li><strong>Email:</strong> abdurrazaq789@gmail.com</li>
+            <li><strong>Address:</strong> Hangu, KPK Pakistan</li>
+          </ul>
+        </section>
+        
+        <!-- Education Section -->
+        <section class="mt-6">
+          <h2 class="text-lg font-bold text-gray-700 border-b-2 border-teal-500">Education</h2>
+          <ul class="list-disc ml-8 mt-4 text-gray-600">
+            <li>
+              <strong>FSc Computer Science</strong> | 2021-2023
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Projects Section -->
+        <section class="mt-6">
+          <h2 class="text-lg font-bold text-gray-700 border-b-2 border-teal-500">Projects</h2>
+          <ul class="list-disc ml-8 mt-4 text-gray-600">
+            <li>
+              <strong>Ecommerce Cloths Shopping</strong> | Sept 2024
+            </li>
+            <li>
+              <strong>YouTube-Clone using NewsAPI</strong> | Aug 2024
+            </li>
+          </ul>
+        </section>
+        
+        <!-- Certificates Section -->
+        <section class="mt-6">
+          <h2 class="text-lg font-bold text-gray-700 border-b-2 border-teal-500">Certificates</h2>
+          <ul class="list-disc ml-8 mt-4 text-gray-600">
+            <li>Complete JavaScript Programming: from Novice to Expert<strong> (Udemy)</strong></li>
+            <li>ReactJS for Beginners<strong> (SimpliLearn)</strong></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    
+    
+    <!-- Mobile Links -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 ">
+      
+      <a href="#about" class="block px-4 py-2 text-sm hover:bg-gray-700">About</a>
+      <a href="#projects" class="block px-4 py-2 text-sm hover:bg-gray-700">Projects</a>
+      <a href="#services" class="block px-4 py-2 text-sm hover:bg-gray-700">Services</a>
+      <a href="#testimonials" class="block px-4 py-2 text-sm hover:bg-gray-700">Testimonials</a>
+      <a href="#contact" class="block px-4 py-2 text-sm hover:bg-gray-700">Contact</a>
+    </div>
+  </nav>
+  
+  <section id="hero" class="pages bg-gray-900 text-white h-[100vh] flex items-center justify-center">
+    <div class="text-center px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-serif sm:text-6xl font-extrabold mb-6">
+        Hi, I'm <span class="text-green-500 ">A</span>bdur <span class="text-green-500">R</span>azzaq
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-400 mb-8 font-serif">
+        A Web Developer specializing in creating stunning websites with React.js, Tailwind CSS, and JavaScript.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a href="#" onclick="toggleResume()" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
+          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-52 group-hover:h-52"></span>
+          <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+          <span class="relative">Resume</span>
+        </a>
+        <a href="#contact" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
+          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-52 group-hover:h-52"></span>
+          <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+          <span class="relative">Contact</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="max-w-6xl mx-auto px-6 py-12 bg-gray-800 text-white">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <!-- Profile Image -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="/razzaq.jpeg" alt="Profile Image" class="w-72 h-72 object-cover rounded-lg shadow-lg">
+      </div>
+      
+      <!-- About Content -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-400 mb-4">About Me</h2>
+        <p class="text-gray-300 leading-relaxed">
+          I'm <span class="text-green-500 font-bold text-2xl ">A</span>bdur <span class="text-green-500 font-bold text-2xl">R</span>azzaq, a passionate Web Developer specializing in creating beautiful, user-friendly websites using modern technologies.
+        </p>
+        <div class="mt-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="p-4 bg-gray-700 rounded-lg">
+              <h3 class="text-2xl font-semibold text-[#61DAFB] mb-2">React.js</h3>
+              <p class="text-gray-400">I build fast and interactive UIs using React.js, focusing on performance and scalability.</p>
+            </div>
+            <div class="p-4 bg-gray-700 rounded-lg">
+              <h3 class="text-2xl font-semibold text-[#06B6D4] mb-2">Tailwind CSS</h3>
+              <p class="text-gray-400">I use Tailwind CSS to create custom, responsive, and aesthetically pleasing designs.</p>
+            </div>
+            <div class="p-4 bg-gray-700 rounded-lg">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-2">JavaScript</h3>
+              <p class="text-gray-400">I leverage JavaScript to bring interactive elements and dynamic content to life.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="pages bg-gray-900 text-white py-20 opacity-0 translate-y-10 transition duration-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">My Projects</h2>
+      <p class="text-lg sm:text-xl text-gray-400 mb-12">
+        Here are some of the projects I’ve worked on. Feel free to explore!
+      </p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="/youtubeBanner.jpeg" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">YouTube-Clone/NewsApi</h3>
+          <p class="text-gray-400 mb-4">A dynamic platform created with HTML, Tailwind CSS, JavaScript, and NewsAPI. It features a responsive design, allowing users to search and explore trending news updates effortlessly.</p>
+          <a href="https://github.com/devARcoder/FANTA-Soft_Drinks-" target="_blank" class="text-blue-600 hover:text-blue-700">View Project</a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="/fantaBanner.jpeg" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">FANTA Drink with Animated</h3>
+          <p class="text-gray-400 mb-4">🟠 Fanta Soft Drink Website An animated and responsive landing page for Fanta, built with 🎨 Tailwind CSS and ✨ smooth animations for an engaging user experience.</p>
+          <a href="https://github.com/devARcoder/FANTA-Soft_Drinks-" target="_blank" class="text-blue-600 hover:text-blue-700">View Project</a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="/weatherBanner.jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">Weathet App</h3>
+          <p class="text-gray-400 mb-4">🌤️ Weather App A simple and responsive weather app built with 🌿 Tailwind CSS and 🌎 OpenWeatherAPI, providing real-time weather updates for any city.</p>
+          <a href="https://github.com/devARcoder/Weather_App" target="_blank" class="text-blue-600 hover:text-blue-700">View Project</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="/news.jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-2">NewsMonkey App</h3>
+          <p class="text-gray-400 mb-4">📰 News Monkey – A modern React.js news app styled with Tailwind CSS & Bootstrap, powered by NewsAPI for real-time news updates. It features category-based filtering, a responsive UI, and seamless pagination for an enhanced reading experience. 🚀</p>
+          <a href="https://github.com/devARcoder/NewsMonkey" target="_blank" class="text-blue-600 hover:text-blue-700">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services" class="pages bg-gray-800 text-white py-20 opacity-0 translate-y-10 transition duration-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">My Services</h2>
+      <p class="text-lg sm:text-xl text-gray-400 mb-12">
+        I provide a variety of web development services to help bring your ideas to life.
+      </p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+          <img src="/webDevelopment.jpeg" alt="Website Development Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-4">Website Development</h3>
+          <p class="text-gray-400">I create modern, responsive websites tailored to meet your business needs.</p>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+          <img src="/UiUx.jpeg" alt="Website Development Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-4">UI/UX Design</h3>
+          <p class="text-gray-400">Designing user-friendly interfaces that enhance user experiences.</p>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+          <img src="/webAnimation.jpeg" alt="Website animation Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
+          <h3 class="text-2xl font-semibold text-blue-400 mb-4">Web Animation</h3>
+          <p class="text-gray-400">Adding engaging animations to make your website interactive and fun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="pages bg-gray-900 text-white py-20 opacity-0 translate-y-10 transition duration-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">What People Say</h2>
+      <p class="text-lg sm:text-xl text-gray-400 mb-12">
+        Hear from some of my satisfied clients and collaborators.
+      </p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-400 italic mb-4">
+            "Working with Abdur Razzaq was a fantastic experience. He delivered a stunning website on time!"
+          </p>
+          <h3 class="text-lg font-semibold text-blue-400">Sajid Rehman</h3>
+          <p class="text-gray-500">KUST, Web Developer</p>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-400 italic mb-4">
+            "Abdur is incredibly talented and professional. Highly recommended for web development!"
+          </p>
+          <h3 class="text-lg font-semibold text-blue-400">Waqas Muhammad</h3>
+          <p class="text-gray-500">UET, Flutter Developer</p>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <p class="text-gray-400 italic mb-4">
+            "The animations and UI enhancements exceeded our expectations. Great work!"
+          </p>
+          <h3 class="text-lg font-semibold text-blue-400">Zain ul abidin</h3>
+          <p class="text-gray-500">UET, Mern Stack Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="pages bg-gray-800 text-white py-20 opacity-0 translate-y-10 transition duration-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Contact Me</h2>
+      <p class="text-lg sm:text-xl text-gray-400 mb-12">
+        Have any questions? Feel free to reach out!
+      </p>
+      
+      <!-- FormSubmit Action URL -->
+      <form action="https://formsubmit.co/Abdurrazaq789@gmail.com" method="POST" class="max-w-lg mx-auto space-y-6">
+        
+        <!-- Hidden Field for Email Subject -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
+        
+        <!-- Visible Form Fields -->
+        <div>
+          <label for="name" class="block text-left text-lg">Your Name</label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="email" class="block text-left text-lg">Your Email</label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        
+        <div>
+          <label for="message" class="block text-left text-lg">Your Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+  
+  <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10 ">
+    <div>
+      <button id="chatButton" class="shadow-lg shadow-green-500/50 block w-12 h-12 rounded-full p-1 border-2 border-green-500 transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+        <img class="object-cover object-center w-full h-full rounded-full" src="/C620F47B-C650-42D2-9547-EBB5ECC02C75.png" />
+      </button>
+    </div>
+  </div>
+  
+  <footer class="bg-gray-900 text-gray-400 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Footer Content -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-white text-xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="#projects" class="hover:text-white">Projects</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-white text-xl font-semibold mb-4">Contact Info</h3>
+          <ul class="space-y-2">
+            <li>Email: <a href="mailto:devarcoder789@gmail.com" class="hover:text-white">abdurrazaq789@gmail.com</a></li>
+            <li>Phone: <a href="tel:+923070925248" class="hover:text-white">+92 307 0925248</a></li>
+            <li>Location: Pakistan</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Footer Bottom -->
+      <div class="mt-10 border-t border-gray-700 pt-6 text-center">
+        <p class="text-sm">
+          © 2025 Abdur Razzaq. All Rights Reserved.
+        </p>
+        <div class="mt-4 space-x-4">
+          <a href="https://github.com/devARcoder" target="_blank" class="text-white hover:text-orange-500"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/abdur-razzaq-8b569a335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="text-white hover:text-orange-500"><i class="fab fa-linkedin"></i></a>
+          <a href="tel:+923070925248" class="text-white hover:text-orange-500"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('chatButton').addEventListener('click', function() {
+      // Redirect to WhatsApp chat with a pre-filled message
+      window.location.href = 'https://wa.me/923070925248?text=Hi, I would like to chat with you.';
+    });
+  </script>
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    
+    const toggleResume = () => {
+      const cartModal = document.getElementById("cartmodal")
+      cartModal.classList.toggle("-translate-x-full")
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+            } else {
+              entry.target.classList.remove('opacity-100', 'translate-y-0');
+              entry.target.classList.add('opacity-0', 'translate-y-10');
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger animation when 10% of the section is visible
+        }
+      );
+      
+      sections.forEach((section) => observer.observe(section));
+    });
+    
+    
+    
+    // Add to your script
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const offset = targetElement.offsetTop - 65; // Adjust 80px to match your navbar height
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth', // Smooth scrolling
+          });
+        }
+      });
+    });
+  </script>
+  
+  <script src="/main.js"></script>
+</body>
+
+</html>

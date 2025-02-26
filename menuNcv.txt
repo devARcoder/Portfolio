@@ -1,0 +1,17 @@
+  <a href="cv.pdf" download="My_CV.pdf" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition">
+    Download CV
+  </a>
+  <div class="hamburger">Burger</div>
+  <div class="nav__items hidden ">
+    hellow i am
+  </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navItem = document.querySelector('.nav__items');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navItem.classList.toggle('hidden');
+    })
+  </script>
