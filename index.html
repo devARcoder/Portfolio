@@ -152,7 +152,7 @@
     </div>
   </section>
   
-  <section id="about" class="max-w-6xl mx-auto px-6 py-12 bg-gray-800 text-white opacity-0 translate-y-10 transition duration-700">
+  <section id="about" class="pages max-w-6xl mx-auto px-6 py-12 bg-gray-800 text-white opacity-0 translate-y-10 transition duration-700">
     <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">About Me</h2>
     <div class="flex flex-col md:flex-row items-center gap-6">
       
@@ -163,7 +163,7 @@
       
       <!-- About Content -->
       <div class="w-full md:w-1/2 text-center md:text-left">
-       
+        
         <p class="text-gray-300 leading-relaxed">
           I'm <span class="text-green-500 font-bold text-2xl ">A</span>bdur <span class="text-green-500 font-bold text-2xl">R</span>azzaq, a passionate Web Developer specializing in creating beautiful, user-friendly websites using modern technologies.
         </p>
@@ -414,28 +414,25 @@
     }
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section');
-      
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('opacity-100', 'translate-y-0');
-              entry.target.classList.remove('opacity-0', 'translate-y-10');
-            } else {
-              entry.target.classList.remove('opacity-100', 'translate-y-0');
-              entry.target.classList.add('opacity-0', 'translate-y-10');
+    document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".pages");
+
+    function checkScroll() {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight - 100) {
+                section.classList.remove("opacity-0", "translate-y-10");
+                section.classList.add("opacity-100", "translate-y-0");
             }
-          });
-        },
-        {
-          threshold: 0.1, // Trigger animation when 10% of the section is visible
-        }
-      );
-      
-      sections.forEach((section) => observer.observe(section));
-    });
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Run on page load
+});
+
     
     
     
