@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume & Certificates</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS for Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
+    <style>
+        /* Hide extra certificates initially */
+        .extra-certificates {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="text-2xl font-bold p-4 flex justify-between items-center border border-b-gray-500">
+      <a href="#" class="sm:order-last">menu</a>
+      <a href="#hero">dev<span class="text-green-500 text-3xl font-extrabold">AR</span>coder</a>
+    <a href="/index.html" ><img class="w-9 h-9" src="/close.svg" alt="" /></a>
+    </div>
+
+    <!-- Scroll to Resume Button -->
+
+
+    <!-- Resume Section -->
+    <section id="resume-section" class="container mx-auto my-10 p-5">
+        <h2 class="text-3xl font-bold text-center mb-6">My <span class="text-green-500">Certificates</span> </h2>
+
+        <!-- Certificate Gallery -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            
+            <!-- Certificate 1 -->
+            <div class="bg-white p-4 shadow-lg rounded-lg" data-aos="fade-up">
+                <img src="/reactJS 2.pdf" alt="Certificate 1" class="w-full h-60 object-cover rounded-lg">
+                <div class="mt-4 flex justify-between">
+                    <a href="certificate1.jpg" download="certificate1.jpg" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download JPG</a>
+                    <a href="certificate1.pdf" download="certificate1.pdf" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="bg-white p-4 shadow-lg rounded-lg" data-aos="fade-up">
+                <img src="/JavaScript.pdf" alt="Certificate 2" class="w-full h-60 object-cover rounded-lg">
+                <div class="mt-4 flex justify-between">
+                    <a href="certificate2.jpg" download="certificate2.jpg" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download JPG</a>
+                    <a href="certificate2.pdf" download="certificate2.pdf" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</a>
+                </div>
+            </div>
+              <div class="bg-white p-4 shadow-lg rounded-lg" data-aos="fade-up">
+    <img src="/reactJS udemy.pdf" alt="Certificate 2" class="w-full h-60 object-cover rounded-lg">
+    <div class="mt-4 flex justify-between">
+      <a href="/reactJS udemy.pdf" download="certificate2.jpg" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download JPG</a>
+      <a href="/reactJS udemy.pdf" download="/reactJS udemy.pdf" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</a>
+    </div>
+  </div>
+
+            <!-- More Certificates (Initially Hidden) -->
+            <div class="bg-white p-4 shadow-lg rounded-lg extra-certificates" data-aos="fade-up">
+                <img src="/Master Tailwindcss.pdf" alt="Certificate 3" class="w-full h-60 object-cover rounded-lg">
+                
+                <div class="mt-4 flex justify-between">
+                    <a href="certificate3.jpg" download="certificate3.jpg" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download JPG</a>
+                    <a href="certificate3.pdf" download="certificate3.pdf" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-lg extra-certificates" data-aos="fade-up">
+                <img src="/Bootstrap 5.pdf" alt="Certificate 4" class="w-full h-60 object-cover rounded-lg">
+                <div class="mt-4 flex justify-between">
+                    <a href="/Bootstrap 5.jpg" download="certificate4.jpg" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download JPG</a>
+                    <a href="certificate4.pdf" download="/Bootstrap 5.pdf" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Show More / Show Less Button -->
+        <div class="text-center mt-6">
+            <button id="toggleButton" onclick="toggleCertificates()" class="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
+                Show More
+            </button>
+        </div>
+    </section>
+
+    <!-- AOS & JavaScript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init();
+
+        // Scroll to Resume Section
+        function scrollToResume() {
+            document.getElementById('resume-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show More / Show Less Functionality
+        function toggleCertificates() {
+            let extraCerts = document.querySelectorAll('.extra-certificates');
+            let button = document.getElementById('toggleButton');
+
+            extraCerts.forEach(cert => {
+                if (cert.style.display === "none" || cert.style.display === "") {
+                    cert.style.display = "block";
+                    button.textContent = "Show Less";
+                } else {
+                    cert.style.display = "none";
+                    button.textContent = "Show More";
+                }
+            });
+        }
+    </script>
+      <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+    
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    
+    const toggleResume = () => {
+      const cartModal = document.getElementById("cartmodal")
+      cartModal.classList.toggle("-translate-x-full")
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+            } else {
+              entry.target.classList.remove('opacity-100', 'translate-y-0');
+              entry.target.classList.add('opacity-0', 'translate-y-10');
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger animation when 10% of the section is visible
+        }
+      );
+      
+      sections.forEach((section) => observer.observe(section));
+    });
+    
+    
+    
+    // Add to your script
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const offset = targetElement.offsetTop - 65; // Adjust 80px to match your navbar height
+          window.scrollTo({
+            top: offset,
+            behavior: 'smooth', // Smooth scrolling
+          });
+        }
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
