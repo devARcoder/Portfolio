@@ -8,6 +8,9 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
 </head>
 <style>
@@ -78,7 +81,7 @@
           <h2 class="text-lg font-bold text-gray-700 border-b-2 border-teal-500">Contact</h2>
           <ul class="list-disc ml-8 mt-4 text-gray-600">
             <li><strong>Phone:</strong> +92 307 0925248</li>
-            <li><strong>Email:</strong> devarcoder789@gmail.com</li>
+            <li><strong>Email:</strong> abdurrazaq789@gmail.com</li>
             <li><strong>Address:</strong> Hangu, KPK Pakistan</li>
           </ul>
         </section>
@@ -129,24 +132,28 @@
     </div>
   </nav>
   
-  <section id="hero" class="pages bg-gray-900 text-white h-[100vh] flex items-center justify-center pb-0 md:pb-10">
-    <div class="text-center px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-serif sm:text-6xl font-extrabold mb-6">
+  <section id="hero" class="pages relative bg-gray-900 text-white h-[100vh] flex items-center justify-center pb-0 md:pb-10">
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-[url('/D5770D2B-96C8-4DB1-9E65-C35562E2EBDB.jpeg')] bg-cover bg-center opacity-20"></div>
+    
+    <!-- Content -->
+    <div class="relative text-center px-4 sm:px-6 lg:px-8">
+      <h1 data-aos="fade-right" class="text-4xl font-serif sm:text-6xl font-extrabold mb-6">
         Hi, I'm <span class="text-green-500 ">A</span>bdur <span class="text-green-500">R</span>azzaq
       </h1>
-      <p class="text-lg sm:text-xl text-gray-400 mb-8 font-serif">
+      <p data-aos="fade-right" class="text-lg sm:text-xl text-gray-400 mb-8 font-serif">
         A Web Developer specializing in creating stunning websites with React.js, Tailwind CSS, and JavaScript.
       </p>
       <div class="flex justify-center space-x-4">
-        <a href="#" onclick="toggleResume()" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
-          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-52 group-hover:h-52"></span>
+        <a href="#" onclick="toggleResume()" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-green-500 rounded-lg group">
+          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-500 rounded-full group-hover:w-52 group-hover:h-52"></span>
           <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
           <span class="relative">Resume</span>
         </a>
-        <a href="#contact" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
+        <a href="/certificates.html" class="relative mt-2 inline-flex items-center justify-center px-6 py-3 overflow-hidden font-serif font-medium tracking-tighter text-white bg-blue-500 rounded-lg group">
           <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-52 group-hover:h-52"></span>
           <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-          <span class="relative">Contact</span>
+          <span class="relative">Certificate</span>
         </a>
       </div>
     </div>
@@ -154,37 +161,36 @@
   
   <section id="about" class="max-w-6xl mx-auto px-6 py-12 bg-gray-800 text-white opacity-0 translate-y-10 transition duration-700">
     <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">About Me</h2>
-    <div class="flex flex-col md:flex-row items-center gap-6">
+    <div class="flex flex-col items-center gap-6">
       
       <!-- Profile Image -->
-      <div class="w-full md:w-1/2 flex justify-center">
-        <img src="/profile.png" alt="Profile Image" class="w-72 h-72 object-cover rounded-lg shadow-lg">
-      </div>
+      <img src="/profile.png" alt="Profile Image" class="w-72 h-72 object-cover rounded-lg shadow-lg">
+    </div>
+    
+    <!-- About Content -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
       
-      <!-- About Content -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-       
-        <p class="text-gray-300 leading-relaxed">
-          I'm <span class="text-green-500 font-bold text-2xl ">A</span>bdur <span class="text-green-500 font-bold text-2xl">R</span>azzaq, a passionate Web Developer specializing in creating beautiful, user-friendly websites using modern technologies.
-        </p>
-        <div class="mt-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <div class="p-4 bg-gray-700 rounded-lg">
-              <h3 class="text-2xl font-semibold text-[#61DAFB] mb-2">React.js</h3>
-              <p class="text-gray-400">I build fast and interactive UIs using React.js, focusing on performance and scalability.</p>
-            </div>
-            <div class="p-4 bg-gray-700 rounded-lg">
-              <h3 class="text-2xl font-semibold text-[#06B6D4] mb-2">Tailwind CSS</h3>
-              <p class="text-gray-400">I use Tailwind CSS to create custom, responsive, and aesthetically pleasing designs.</p>
-            </div>
-            <div class="p-4 bg-gray-700 rounded-lg">
-              <h3 class="text-2xl font-semibold text-yellow-500 mb-2">JavaScript</h3>
-              <p class="text-gray-400">I leverage JavaScript to bring interactive elements and dynamic content to life.</p>
-            </div>
+      <p class="text-gray-300 leading-relaxed">
+        I'm <span class="text-green-500 font-bold text-2xl ">A</span>bdur <span class="text-green-500 font-bold text-2xl">R</span>azzaq, a passionate Web Developer specializing in creating beautiful, user-friendly websites using modern technologies.
+      </p>
+      <div class="mt-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div data-aos="fade-right" class="p-4 bg-gray-700 rounded-lg">
+            <h3 class="text-2xl font-semibold text-[#61DAFB] mb-2">React.js</h3>
+            <p class="text-gray-400">I build fast and interactive UIs using React.js, focusing on performance and scalability.</p>
           </div>
-          
+          <div data-aos="fade-right" class="p-4 bg-gray-700 rounded-lg">
+            <h3 class="text-2xl font-semibold text-[#06B6D4] mb-2">Tailwind CSS</h3>
+            <p class="text-gray-400">I use Tailwind CSS to create custom, responsive, and aesthetically pleasing designs.</p>
+          </div>
+          <div data-aos="fade-right" class="p-4 bg-gray-700 rounded-lg">
+            <h3 class="text-2xl font-semibold text-yellow-500 mb-2">JavaScript</h3>
+            <p class="text-gray-400">I leverage JavaScript to bring interactive elements and dynamic content to life.</p>
+          </div>
         </div>
+        
       </div>
+    </div>
     </div>
   </section>
   
@@ -197,7 +203,7 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project 1 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div data-aos="zoom-in-down" class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <img src="/youtubeBanner.jpeg" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
           <h3 class="text-2xl font-semibold text-blue-400 mb-2">YouTube-Clone/NewsApi</h3>
           <p class="text-gray-400 mb-4">A dynamic platform created with HTML, Tailwind CSS, JavaScript, and NewsAPI. It features a responsive design, allowing users to search and explore trending news updates effortlessly.</p>
@@ -205,7 +211,7 @@
         </div>
         
         <!-- Project 2 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div data-aos="zoom-in-down" class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <img src="/fantaBanner.jpeg" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4">
           <h3 class="text-2xl font-semibold text-blue-400 mb-2">FANTA Drink with Animated</h3>
           <p class="text-gray-400 mb-4">🟠 Fanta Soft Drink Website An animated and responsive landing page for Fanta, built with 🎨 Tailwind CSS and ✨ smooth animations for an engaging user experience.</p>
@@ -213,14 +219,14 @@
         </div>
         
         <!-- Project 3 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div data-aos="zoom-in-down" class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <img src="/weatherBanner.jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
           <h3 class="text-2xl font-semibold text-blue-400 mb-2">Weathet App</h3>
           <p class="text-gray-400 mb-4">🌤️ Weather App A simple and responsive weather app built with 🌿 Tailwind CSS and 🌎 OpenWeatherAPI, providing real-time weather updates for any city.</p>
           <a href="https://github.com/devARcoder/Weather_App" target="_blank" class="text-blue-600 hover:text-blue-700">View Project</a>
         </div>
-        <!-- Project 3 -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <!-- Project 4 -->
+        <div data-aos="zoom-in-down" class="bg-gray-800 p-6 rounded-lg shadow-lg">
           <img src="/news.jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
           <h3 class="text-2xl font-semibold text-blue-400 mb-2">NewsMonkey App</h3>
           <p class="text-gray-400 mb-4">📰 News Monkey – A modern React.js news app styled with Tailwind CSS & Bootstrap, powered by NewsAPI for real-time news updates. It features category-based filtering, a responsive UI, and seamless pagination for an enhanced reading experience. 🚀</p>
@@ -240,21 +246,21 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Service 1 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+        <div data-aos="fade-down" class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
           <img src="/webDevelopment.jpeg" alt="Website Development Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
           <h3 class="text-2xl font-semibold text-blue-400 mb-4">Website Development</h3>
           <p class="text-gray-400">I create modern, responsive websites tailored to meet your business needs.</p>
         </div>
         
         <!-- Service 2 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+        <div data-aos="fade-down" class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
           <img src="/UiUx.jpeg" alt="Website Development Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
           <h3 class="text-2xl font-semibold text-blue-400 mb-4">UI/UX Design</h3>
           <p class="text-gray-400">Designing user-friendly interfaces that enhance user experiences.</p>
         </div>
         
         <!-- Service 3 -->
-        <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+        <div data-aos="fade-down" class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
           <img src="/webAnimation.jpeg" alt="Website animation Icon" class="w-16 h-16 mx-auto mb-4 object-cover rounded-full">
           <h3 class="text-2xl font-semibold text-blue-400 mb-4">Web Animation</h3>
           <p class="text-gray-400">Adding engaging animations to make your website interactive and fun.</p>
@@ -363,9 +369,9 @@
         <div>
           <h3 class="text-white text-xl font-semibold mb-4">Contact Info</h3>
           <ul class="space-y-2">
-            <li>Email: <a href="mailto:devarcoder789@gmail.com" class="hover:text-white">devarcoder789@gmail.com</a></li>
+            <li>Email: <a href="mailto:devarcoder789@gmail.com" class="hover:text-white">abdurrazaq789@gmail.com</a></li>
             <li>Phone: <a href="tel:+923070925248" class="hover:text-white">+92 307 0925248</a></li>
-            <li>Location:KP, Pakistan</li>
+            <li>Location: Pakistan</li>
           </ul>
         </div>
       </div>
@@ -459,6 +465,9 @@
   
   
   <script src="/main.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
